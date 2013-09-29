@@ -6,8 +6,8 @@ from fabfile import deploy, refresh, restart, stage, sync, topic
 
 # ENVIRONMENT
 
-env.application = 'plumradio'
-env.repo_url = 'git@github.com:phazemedia/plumradio.git'
+env.application = 'projectname'
+env.repo_url = 'git@github.com:myname/projectname.git'
 env.production_branch = 'master'
 env.staging_branch = 'staging'
 
@@ -20,8 +20,8 @@ django.project(env.application)
 def staging():
     env.branch = env.staging_branch
     env.roledefs = {
-            'app': ['web@162.209.99.49'],
-            'db': ['web@162.209.99.49'],
+            'app': ['web@111.111.11.11'],
+            'db': ['web@111.111.11.11'],
             }
 
 
@@ -29,8 +29,8 @@ def staging():
 def production():
     env.branch = env.production_branch
     env.roledefs = {
-            'app': ['web@192.237.219.246'],
-            'db': ['web@192.237.219.246'],
+            'app': ['web@222.222.22.22'],
+            'db': ['web@222.222.22.22'],
             }
 
 
